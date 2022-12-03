@@ -1,0 +1,77 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class = "Content-Section">
+    <form method='POST',action="">
+        {{form.hidden_tag()}}
+        <fieldset class = "form-group">
+            <legend class = "border-bottom mb-4">Predict</legend>
+            <div >
+                {{form.sepal_length.label(class = "form-control-label")}}
+                {%if form.sepal_length.errors%}
+                    {{form.sepal_length(class ="form-control form-control-lg is-invalid")}}
+                    <div class = "invalid-feedback">
+                        {%for error in form.sepal_length.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.sepal_length(class ="form-control form-control-lg")}}
+                {%endif%}
+            </div>
+            <div >
+                {{form.petal_length.label(class = "form-control-label")}}
+                {%if form.petal_length.errors%}
+                    {{form.petal_length(class ="form-control form-control-lg is-invalid")}}
+                    <div class = "invalid-feedback">
+                        {%for error in form.petal_length.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.petal_length(class ="form-control form-control-lg")}}
+                {%endif%}
+            </div>
+            <div >
+                {{form.petal_width.label(class = "form-control-label")}}
+                {%if form.petal_width.errors%}
+                    {{form.petal_width(class ="form-control form-control-lg is-invalid")}}
+                    <div class = "invalid-feedback">
+                        {%for error in form.petal_width.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.petal_width(class ="form-control form-control-lg")}}
+                {%endif%}
+            </div>
+            <div >
+                {{form.sepal_width.label(class = "form-control-label")}}
+                {%if form.sepal_width.errors%}
+                    {{form.sepal_width(class ="form-control form-control-lg is-invalid")}}
+                    <div class = "invalid-feedback">
+                        {%for error in form.sepal_width.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.sepal_width(class ="form-control form-control-lg")}}
+                {%endif%}
+            </div>
+        </fieldset>
+        <div  class = 'form-group'>
+            {{form.submit(class= "btn btn-outline_info")}}
+        </div>
+        <div class="col-md-4">
+            <div>
+                <legend class = "border-bottom mb-4">Result</legend>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-medium">{{post}}</li>
+                  </ul>
+
+            </div>
+        </div>
+        
+    </form>
+    
+</div>
+{%endblock content%}
